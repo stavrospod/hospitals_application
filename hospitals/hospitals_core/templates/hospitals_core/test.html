@@ -1,0 +1,26 @@
+{% extends "hospitals_core/layout.html" %}
+{% block title%}This is homepage{% endblock %}
+
+{% block body %}
+<h1>{{region}}</h1>
+
+<div>
+{% include 'hospitals_core/date_filter.html' %}
+</div>
+
+<ul>
+    {% for clinic in clinics %}
+    <li><a href="{#% url 'hospitals_core:efimereuonta-nosokomeia' region.region.slug %#}">{{ clinic.clinic }}</a></li>
+    {% endfor %}
+</ul>
+
+<h2>Add some information</h2>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae nostrum asperiores architecto exercitationem praesentium illo ipsa voluptatem voluptas? Est voluptatum ab aliquam soluta eum voluptas totam culpa ducimus inventore modi.</p>
+
+<h2>News</h2>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur quaerat vero inventore? Aliquam repellendus neque consequatur illum mollitia deleniti odit!</p>
+{% endblock %}
+
+{% block footer %}
+        <h3>This is the footer and now you are at homepage</h3>
+{% endblock footer%}

@@ -1,0 +1,5 @@
+<div>
+{% for date in date_filters %}
+<button data ={{date.onhold_date|date:"Y-m-d"}}>{{date.onhold_date | date:"Y-m-d"}}</button>    
+{% endfor %}
+</div>
