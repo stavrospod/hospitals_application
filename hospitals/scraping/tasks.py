@@ -30,7 +30,6 @@ def add_to_the_db(df_records):
         )
     print(f"Items missed {info_missing}")
 
-print(f"Adding data for ATHENS")
+
 add_to_the_db(athens_records)
-print(f"Adding data for THESSALONIKI")
 add_to_the_db(thessaloniki_records)

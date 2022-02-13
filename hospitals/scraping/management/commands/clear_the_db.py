@@ -20,4 +20,8 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
             ScrapedHospitals.objects.all().delete()
+            # Schedule.objects.all().delete()
+            # Clinic.objects.all().delete()
+            # Hospital.objects.all().delete()
+            # Region.objects.all().delete()
             print("All data should be deleted")

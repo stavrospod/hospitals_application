@@ -1,0 +1,27 @@
+{% extends "hospitals_core/layout.html" %}
+{% block title%}This is homepage{% endblock %}
+
+{% block body %}
+<h1>Clinics for {{region}}</h1>
+
+<div>
+    Dates
+    {% for date in date_filters %}
+    {% csrf_token %}
+    <button data ={{date.onhold_date|date:"Y-m-d"}} hx-post="/efimereuonta-nosokomeia/{{region_slug}}/{{clinic_slug}}/{{date.onhold_date|date:"Y-m-d"}}/" hx-target="#search-results">{{date.onhold_date | date:"d-m-Y"}}</button>    
+    {% endfor %}
+    
+    {{region_slug}}
+</div>
+
+<div id="search-results">
+    {% include 'hospitals_core/results.html'%}
+</div>
+
+</div>
+
+{% endblock %}
+
+{% block footer %}
+        <h3>This is the footer and now you are at homepage</h3>
+{% endblock footer%}

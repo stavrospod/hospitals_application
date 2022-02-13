@@ -1,0 +1,18 @@
+{% extends "hospitals_core/layout.html" %}
+{% block title%}This is homepage{% endblock %}
+
+{% block body %}
+<div id="header-info" class="container my-4">
+    <h1>Εφημερεύοντες Κλινικές στην {{region}}</h1>
+    <h2 class="mt-3 fs-5"><u>Παρακαλώ Επιλέξτε Μια Κλινική</u></h2>
+</div>
+
+<div class="container">
+    <div class="row mb-3 bg-secondary bg-opacity-25">
+        {% for clinic in available_clinics %}
+        <a href="{% url 'hospitals_core:clinics-view' region_slug clinic.clinic.slug %}" class="col-sm-4 themed-grid-col d-flex justify-content-evenly link-dark mb-3">{{ clinic.clinic }}</a>
+        {% endfor %}
+      </div>
+</div>
+
+{% endblock %}

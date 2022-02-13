@@ -1,0 +1,19 @@
+/*Mobile view */
+@media screen and (max-width: 600px) {
+    #column3 {
+      display: none!important;
+    }
+  }
+
+
+/*Over Tablet view */
+@media screen and (min-width: 600px) {
+    #column2 {
+    }
+    button {
+        width: 70%!important;
+        margin-left: auto!important;
+        margin-right: auto!important;
+        height: fit-content;
+    }
+  }
